@@ -6,41 +6,73 @@
     <script src="jquery-3.5.1.min.js"></script>
   </head>
   <body>
+    <!-- 기본 페이지 -->
     <div class="container" id="alertNotOnBand">
       밴드 내 멤버 페이지에서 실행하세요!
     </div>
+
     <div class="container" id="onBand">
-      <div id="getInfo">
-        <div class="input-container">
-          <label for="excludedNames">제외할 이름을 입력하세요!</label>
-          <input type="text" id="excludedNames" class="output"/>
-        </div>
+      <!-- 밴드 내 안내 페이지 -->
+      <div class="container" id="firstClick">
+        <p>
+          <b>자동 랜덤 태그</b>: 상태 메세지 내 특수문자 또는 이모지가 있는 경우 커플로 인식하고,
+          '커플 제외 랜덤 태그'에서 자동으로 제외합니다.
+        </p>
+        <p>
+          <b>제외 멤버 입력</b>: 랜덤 태그에서 제외할 멤버의 목록을 직접 입력합니다.
+        </p>
+        <p>
+          프로필 설정이 완료되지 않은 멤버는 태그에 포함되지 않습니다. (이름이 .인 경우)
+        </p>
+        <p>
+          <input type="checkbox" id="statusBlank">
+          <label> 상태 메시지가 없는 멤버 태그에 포함 </label>
+        </p>
+        <button id="createShuffleV1">자동 랜덤 태그</button>
+        <button id="createShuffleV2">제외 멤버 입력</button>
       </div>
-      <div class="container" id="return">
-        <div class="input-container">
+
+      <!-- V1 -->
+      <div class="container" id="returnV1">
+        <div class="input-container" id="input-container1">
           <label for="output0">커플 목록: </label>
-          <input type="text" id="output0" class="output"/>
+          <input type="text" id="output0" class="output" readonly="readonly"/>
         </div>
         <div class="input-container">
           <label for="output1">커플 제외 랜덤 태그: </label>
-          <input type="text" id="output1" class="output"/>
+          <input type="text" id="output1" class="output" readonly="readonly"/>
+          <button class="smallButton" id="copy1">복사</button>
         </div>
         <div class="input-container">
           <label for="output2">전체 멤버 랜덤 태그: </label>
-          <input type="text" id="output2" class="output"/>
+          <input type="text" id="output2" class="output" readonly="readonly"/>
+          <button class="smallButton" id="copy2">복사</button>
         </div>
         <button id="newShuffle">다시 돌리기</button>
       </div>
-      <div class="container" id="firstClick">
-        <p>
-          1. 프로필 설정이 완료되지 않은 멤버는 태그에 포함되지 않습니다. (상태
-          메세지가 없거나 이름이 .인 경우)
-        </p>
-        <p>
-          2. 상태 메세지 내 특수문자 또는 이모지가 있는 경우 커플로 인식합니다.
-        </p>
-        <button id="createShuffle">랜덤 태그!</button>
+
+      <!-- V2 -->
+      <div class="container" id="returnV2">
+        <div class="input-container">
+          <label for="manualCoupleList">제외할 멤버의 이름을 입력하세요: <br> 쉼표(,)로 다음 이름을 인식합니다.</label>
+          <input type="text" id="manualCoupleList" class="output" style="
+                    width: 94%;
+                    margin-top: 7px;"
+                    />
+        </div>
+        <button id="runShuffle">랜덤 태그!</button>
+        <div class="input-container" id="input-container2">
+          <label for="V2output1">입력한 멤버가 제외된 랜덤 태그: </label>
+          <input type="text" id="V2output1" class="output" readonly="readonly"/>
+          <button class="smallButton" id="copy3">복사</button>
+        </div>
+        <div class="input-container">
+          <label for="V2output2">전체 멤버 랜덤 태그: </label>
+          <input type="text" id="V2output2" class="output" readonly="readonly"/>
+          <button class="smallButton" id="copy4">복사</button>
+        </div>
       </div>
+
       <script src="popup.js"></script>
     </div>
   </body>

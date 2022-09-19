@@ -21,28 +21,34 @@ p {
   justify-content: center;
 }
 
-#createShuffle {
+#createShuffleV1, #createShuffleV2 {
   height: 45px;
   padding: 10px;
   margin: 10px;
 }
 
-#newShuffle {
+#newShuffle, #runShuffle {
   margin: 10px;
 }
 
-#return {
+#returnV1 {
   display: none;
   flex-direction: column;
   justify-content: center;
+}
+
+#returnV2 {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 13px;
 }
 
 #onBand {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 200px;
-  height: 240px;
+  width: 250px;
 }
 
 .output {
@@ -53,7 +59,19 @@ p {
 }
 
 .input-container {
-  padding: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.smallButton {
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 9px;
+  margin-left: 10px;
 }
 
 button {
@@ -61,7 +79,6 @@ button {
   color: white;
   border: none;
   padding: 5px 15px;
-  margin: 5px;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
@@ -71,8 +88,4 @@ button {
 
 button:hover {
   font-weight: bold;
-}
-
-#getInfo {
-  display: none;
 }
