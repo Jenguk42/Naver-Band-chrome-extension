@@ -98,7 +98,6 @@
       soloList = memberList.filter((el) => !autoCoupleList.includes(el));
     } else if (version === 2) {
       // retrieve solo list from input
-      console.log(manualCoupleList);
       manualCoupleListArr = manualCoupleList.split(/[\s]*[,][\s]*/);
       soloList = memberList.filter((el) => !manualCoupleListArr.includes(el));
       manNumCouples = memberList.length - soloList.length;
